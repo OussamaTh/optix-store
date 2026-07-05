@@ -1,17 +1,17 @@
 <div class="flex gap-4 cart-item-row" data-cart-item-id="{{ $item->id }}">
     <div class="w-16 h-16 rounded-xl bg-gray-50 border border-[#19140010] overflow-hidden shrink-0">
         @if ($item->product?->image_path)
-            <img src="{{ \Illuminate\Support\Facades\Storage::url($item->product->image_path) }}"
-                alt="{{ $item->product->name }}" class="w-full h-full object-cover">
+            <img src="{{ \Illuminate\Support\Facades\Storage::url($item->product?->image_path) }}"
+                alt="{{ $item->product?->name }}" class="w-full h-full object-cover">
         @endif
     </div>
 
     <div class="flex-1 min-w-0">
         <div class="flex justify-between items-start gap-2">
             <div class="min-w-0">
-                <p class="text-sm font-semibold text-[#1b1b18] truncate">{{ $item->product->name }}</p>
+                <p class="text-sm font-semibold text-[#1b1b18] truncate">{{ $item->product?->name }}</p>
                 <p class="text-[11px] text-gray-400 uppercase tracking-wide mt-0.5">
-                    {{ $item->variant->name ?? ($item->product->category->name ?? 'Item') }}
+                    {{ $item->variant->name ?? ($item->product?->category->name ?? 'Item') }}
                 </p>
             </div>
             <p class="text-sm font-bold text-[#1b1b18] shrink-0 cart-item-price">
