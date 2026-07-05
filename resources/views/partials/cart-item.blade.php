@@ -1,6 +1,6 @@
 <div class="flex gap-4 cart-item-row" data-cart-item-id="{{ $item->id }}">
     <div class="w-16 h-16 rounded-xl bg-gray-50 border border-[#19140010] overflow-hidden shrink-0">
-        @if ($item->product->image_path)
+        @if ($item->product?->image_path)
             <img src="{{ \Illuminate\Support\Facades\Storage::url($item->product->image_path) }}"
                 alt="{{ $item->product->name }}" class="w-full h-full object-cover">
         @endif
