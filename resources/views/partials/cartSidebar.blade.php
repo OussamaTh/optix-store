@@ -1,6 +1,6 @@
 @php
     $cartItems = $cartItems ?? (auth()->check() ? auth()->user()->cartItems()->with('product')->get() : collect());
-    $subtotal = $cartItems->sum(fn($item) => $item->product->price * $item->quantity);
+    $subtotal = $cartItems->sum(fn($item) => ($item->product?->price ?? 0) * $item->quantity);
     $delivery = 0;
     $total = $subtotal + $delivery;
 @endphp
