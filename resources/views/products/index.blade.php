@@ -168,8 +168,8 @@
                                 class="group block flex flex-col justify-between">
                                 <div
                                     class="relative bg-gray-50 border border-[#19140010] rounded-2xl aspect-square overflow-hidden mb-4">
-                                    @if ($product->image_path)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image_path) }}"
+                                    @if ($product->image_url)
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image_url) }}"
                                             alt="{{ $product->name }}"
                                             class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300">
                                     @else
