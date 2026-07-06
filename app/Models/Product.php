@@ -33,17 +33,23 @@ class Product extends Model
 
 
 
-    public function getImageUrlAttribute(): ?string
+    public function getImageUrlAttribute(): string
     {
-        if (! $this->image_path) {
-            return null;
+        if (empty($this->image_path)) {
+            return asset('images/placeholder.png');
         }
 
-        if (str_starts_with($this->image_path, 'http://') || str_starts_with($this->image_path, 'https://')) {
+        if (\Illuminate\Support\Str::starts_with($this->image_path, 'http://') || \Illuminate\Support\Str::starts_with($this->image_path, 'https://')) {
             return $this->image_path;
         }
 
-        return Storage::disk('s3')->url($this->image_path);
+        if (config('app.env') === 'production') {
+            // 💡 CHANGE THIS string below to match your real Supabase project sub-domain string
+            $projectRef = 'optix-store';
+            return "https://{$projectRef}.storage.supabase.co/object/public/product-images/{$this->image_path}";
+        }
+
+        return asset('storage/' . $this->image_path);
     }
 
 
