@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -39,14 +40,13 @@ class Product extends Model
             return asset('images/placeholder.png');
         }
 
-        if (\Illuminate\Support\Str::starts_with($this->image_path, 'http://') || \Illuminate\Support\Str::starts_with($this->image_path, 'https://')) {
+        // 💡 Changed from Str::starts_with to Str::startsWith
+        if (\Illuminate\Support\Str::startsWith($this->image_path, ['http://', 'https://'])) {
             return $this->image_path;
         }
 
         if (config('app.env') === 'production') {
-            // 💡 CHANGE THIS string below to match your real Supabase project sub-domain string
-            $projectRef = 'optix-store';
-            return "https://{$projectRef}.storage.supabase.co/object/public/product-images/{$this->image_path}";
+            return "https://atstkhkmxhxvqxhdzgnx.supabase.co/storage/v1/object/public/products-images/{$this->image_path}";
         }
 
         return asset('storage/' . $this->image_path);
