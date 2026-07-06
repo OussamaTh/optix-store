@@ -142,9 +142,18 @@ class ProductController extends Controller
             'ids.*' => 'integer|exists:products,id',
         ]);
 
-        $count = Product::whereIn('id', $validated['ids'])->count();
+        // Gather file names before dropping rows
+        $products = Product::whereIn('id', $validated['ids'])->select('image_path')->get();
+        $filesToDelete = $products->pluck('image_path')
+            ->filter(fn($path) => !empty($path) && !str_starts_with($path, 'http'))
+            ->toArray();
 
-        Product::whereIn('id', $validated['ids'])->delete();
+        // Clean up Supabase
+        if (!empty($filesToDelete)) {
+            \Illuminate\Support\Facades\Storage::disk('s3')->delete($filesToDelete);
+        }
+
+        $count = Product::whereIn('id', $validated['ids'])->delete();
 
         return redirect()
             ->route('admin.products.index')
@@ -167,5 +176,24 @@ class ProductController extends Controller
         }
 
         return $slug;
+    }
+
+    public function getImageUrlAttribute(): string
+    {
+        if (empty($this->image_path)) {
+            return asset('images/placeholder.png');
+        }
+
+        if (\Illuminate\Support\Str::starts_with($this->image_path, 'http://') || \Illuminate\Support\Str::starts_with($this->image_path, 'https://')) {
+            return $this->image_path;
+        }
+
+        if (config('app.env') === 'production') {
+            // 💡 CHANGE THIS string below to match your real Supabase project sub-domain string
+            $projectRef = 'optix-store';
+            return "https://{$projectRef}.storage.supabase.co/object/public/product-images/{$this->image_path}";
+        }
+
+        return asset('storage/' . $this->image_path);
     }
 }
