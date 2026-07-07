@@ -76,7 +76,7 @@
                     <!-- Sunglasses Hero Image -->
                     <div class="w-full lg:w-[48%] flex justify-center items-center z-10">
                         <div class="relative w-full max-w-[480px] hover:scale-102 transition-transform duration-500">
-                            <img src="./images/hero_sunglasses.png" alt="Premium Elegant Sunglasses"
+                            <img src="{{ asset('images/hero_sunglasses.png') }}" alt="Premium Elegant Sunglasses"
                                 class="w-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                         </div>
                     </div>

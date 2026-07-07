@@ -21,8 +21,8 @@
             <div>
                 <div class="bg-gray-50 border border-[#19140010] rounded-2xl aspect-square overflow-hidden mb-4">
                     @if ($product->image_path)
-                        <img id="main-image" src="{{ \Illuminate\Support\Facades\Storage::url($product->image_path) }}"
-                            alt="{{ $product->name }}" class="w-full h-full object-cover">
+                        <img id="main-image" src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                            class="w-full h-full object-cover">
                     @else
                         <div class="w-full h-full flex items-center justify-center">
                             <svg class="w-14 h-14 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -42,12 +42,12 @@
                     you want multiple angles per product — happy to build
                     that migration + upload UI if you want it.
                 --}}
-                @if ($product->image_path)
+                @if ($product->image_url)
                     <div class="grid grid-cols-4 gap-3">
                         <button type="button"
                             class="bg-gray-50 border-2 border-[#1b1b18] rounded-xl aspect-square overflow-hidden">
-                            <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image_path) }}"
-                                alt="{{ $product->name }}" class="w-full h-full object-cover">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                class="w-full h-full object-cover">
                         </button>
                     </div>
                 @endif
@@ -167,9 +167,8 @@
                 @foreach ($relatedProducts as $related)
                     <a href="{{ route('products.show', $related) }}" class="group block">
                         <div class="bg-gray-50 border border-[#19140010] rounded-2xl aspect-square overflow-hidden mb-3">
-                            @if ($related->image_path)
-                                <img src="{{ \Illuminate\Support\Facades\Storage::url($related->image_path) }}"
-                                    alt="{{ $related->name }}"
+                            @if ($related->image_url)
+                                <img src="{{ $related->image_url }}" alt="{{ $related->name }}"
                                     class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300">
                             @endif
                         </div>

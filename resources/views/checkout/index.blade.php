@@ -242,8 +242,8 @@
                                     <div class="flex gap-3">
                                         <div
                                             class="w-14 h-14 rounded-xl bg-gray-50 border border-[#19140010] overflow-hidden shrink-0">
-                                            @if ($item->product->image_path)
-                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($item->product->image_path) }}"
+                                            @if ($item->product->image_url)
+                                                <img src="{{ $item->product->image_url }}"
                                                     alt="{{ $item->product->name }}" class="w-full h-full object-cover">
                                             @endif
                                         </div>

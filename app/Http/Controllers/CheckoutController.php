@@ -85,7 +85,7 @@ class CheckoutController extends Controller
             // Clear cart
             $user->cartItems()->delete();
 
-            return redirect()->route('main-page')->with('success', 'Order placed successfully!');
+            return redirect()->to("/account?tab=orders")->with('success', 'Order placed successfully!');
         });
     }
 }
