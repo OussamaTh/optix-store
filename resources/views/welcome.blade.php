@@ -76,7 +76,7 @@
                     <!-- Sunglasses Hero Image -->
                     <div class="w-full lg:w-[48%] flex justify-center items-center z-10">
                         <div class="relative w-full max-w-[480px] hover:scale-102 transition-transform duration-500">
-                            <img src="{{ asset('images/hero_sunglasses.png') }}" alt="Premium Elegant Sunglasses"
+                            <img src="images/hero_sunglasses.png" alt="Premium Elegant Sunglasses"
                                 class="w-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                         </div>
                     </div>
@@ -229,7 +229,7 @@
                     <!-- Feature 1: Smart Design -->
                     <div>
                         <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 mb-6 relative">
-                            <img src="{{ asset('images/feature_smart_design.png') }}"
+                            <img src="https://atstkhkmxhxvqxhdzgnx.supabase.co/storage/v1/object/public/products-images/products/BoDD6j7r40ECAhmNCymKpyO6WhhZ7rvG0c9yFm7v.png"
                                 alt="Smart Design transparency frames" class="w-full h-full object-cover">
                         </div>
                         <h3 class="text-lg font-semibold text-[#1b1b18] mb-3">Smart Design</h3>
@@ -243,7 +243,7 @@
                     <!-- Feature 2: Elegant Style -->
                     <div>
                         <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 mb-6 relative">
-                            <img src="http://localhost:9000/product-images/products/GwYJyWX4epS2zy4lMJ67zb09tym2B5NarVuvjhks.jpg"
+                            <img src="https://atstkhkmxhxvqxhdzgnx.supabase.co/storage/v1/object/public/products-images/products/3tKwYYS8oPvBK3uqwjhpAALfTXEhF7RWl6Er28vE.jpg"
                                 alt="Elegant Style profile views" class="w-full h-full object-cover">
                         </div>
                         <h3 class="text-lg font-semibold text-[#1b1b18] mb-3">Elegant Style</h3>
@@ -257,7 +257,7 @@
                     <!-- Feature 3: Clarity refined -->
                     <div>
                         <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 mb-6 relative">
-                            <img src="http://localhost:9000/product-images/products/nZj6CsrxaTBOeWYlBohMwhM9rbfbyx90RIaKEnwM.png"
+                            <img src="https://atstkhkmxhxvqxhdzgnx.supabase.co/storage/v1/object/public/products-images/products/51CXPbm9qnOfna6mLMPYjj3xQbHGvdnx0wGxiKeK.jpg"
                                 alt="Clarity Refined lens process" class="w-full h-full object-cover">
                         </div>
                         <h3 class="text-lg font-semibold text-[#1b1b18] mb-3">Clarity refined</h3>
