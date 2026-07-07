@@ -194,7 +194,7 @@
                                     <p class="text-sm font-bold text-[#1b1b18] mt-2">
                                         ${{ number_format($product->price, 2) }}
                                     </p>
-                                    <div class="">
+                                    {{-- <div class="">
                                         <form class="add-to-cart-form flex-1" method="POST"
                                             action="{{ route('cart.store') }}">
                                             @csrf
@@ -210,7 +210,7 @@
                                                 <span class="cart-btn-text">Add to Cart</span>
                                             </button>
                                         </form>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </a>
                         @endforeach
