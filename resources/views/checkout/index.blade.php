@@ -255,7 +255,7 @@
                                             <div class="flex items-center justify-between mt-1">
                                                 <span class="text-xs text-gray-400">Qty: {{ $item->quantity }}</span>
                                                 <span
-                                                    class="text-sm font-bold text-[#1b1b18]">${{ number_format($item->subtotal, 2) }}</span>
+                                                    class="text-sm font-bold text-[#1b1b18]">{{ number_format($item->subtotal, 2) }} DH</span>
                                             </div>
                                         </div>
                                     </div>
@@ -266,17 +266,17 @@
                             <div class="border-t border-[#19140010] pt-4 space-y-2.5">
                                 <div class="flex justify-between text-xs text-gray-500">
                                     <span>Subtotal</span>
-                                    <span class="font-medium text-[#1b1b18]">${{ number_format($subtotal, 2) }}</span>
+                                    <span class="font-medium text-[#1b1b18]">{{ number_format($subtotal, 2) }} DH</span>
                                 </div>
                                 <div class="flex justify-between text-xs text-gray-500">
                                     <span>Delivery</span>
                                     <span
-                                        class="font-medium text-[#1b1b18]">{{ $delivery > 0 ? '$' . number_format($delivery, 2) : 'Free' }}</span>
+                                        class="font-medium text-[#1b1b18]">{{ $delivery > 0 ? 'DH' . number_format($delivery, 2) : 'Free' }}</span>
                                 </div>
                                 @if ($delivery > 0)
                                     <div class="flex justify-between text-xs text-gray-500">
                                         <span>Shipping</span>
-                                        <span class="font-medium text-[#1b1b18]">${{ number_format($delivery, 2) }}</span>
+                                        <span class="font-medium text-[#1b1b18]">{{ number_format($delivery, 2) }} DH</span>
                                     </div>
                                 @endif
                             </div>
@@ -284,7 +284,7 @@
                             {{-- Total --}}
                             <div class="border-t border-[#19140010] mt-4 pt-4 flex justify-between items-center">
                                 <span class="text-sm font-bold text-[#1b1b18]">Total</span>
-                                <span class="text-lg font-bold text-[#1b1b18]">${{ number_format($total, 2) }}</span>
+                                <span class="text-lg font-bold text-[#1b1b18]">{{ number_format($total, 2) }} DH</span>
                             </div>
 
                             {{-- Submit Button --}}

@@ -185,7 +185,7 @@
                                             <span
                                                 class="text-xs text-gray-400 block uppercase tracking-wider font-medium">Total</span>
                                             <span
-                                                class="text-base font-bold text-[#1b1b18]">${{ number_format($order->total_amount, 2) }}</span>
+                                                class="text-base font-bold text-[#1b1b18]">{{ number_format($order->total_amount, 2) }} DH</span>
                                         </div>
 
                                         <div class="flex items-center gap-2">

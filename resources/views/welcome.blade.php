@@ -117,7 +117,7 @@
                                 {{ $product->description }}
                             </p>
                             <p class="text-sm font-bold text-center text-[#1b1b18]">
-                                ${{ number_format($product->price, 2) }}
+                                {{ number_format($product->price, 2) }} DH
                             </p>
                         </a>
                     @endforeach

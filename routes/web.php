@@ -82,3 +82,9 @@ Route::middleware(['auth', "customer"])->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 });
+
+
+// routes/web.php — remove after testing
+Route::get('/test-error/{code}', function ($code) {
+    abort((int) $code);
+});

@@ -117,14 +117,14 @@
                         <div class="mt-4">
                             <div class="flex items-center gap-2">
                                 <div class="relative flex-1">
-                                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">$</span>
+                                    <span class="absolute left-1 top-1/2 -translate-y-1/2 text-xs text-gray-400">DH</span>
                                     <input type="number" name="price_min" value="{{ request('price_min') }}"
                                         placeholder="{{ $priceRange->min_price ? number_format($priceRange->min_price, 0) : '0' }}"
                                         class="w-full pl-6 pr-2 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-[#1b1b18]/40 transition-colors">
                                 </div>
                                 <span class="text-gray-300 text-xs">–</span>
                                 <div class="relative flex-1">
-                                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">$</span>
+                                    <span class="absolute left-1 top-1/2 -translate-y-1/2 text-xs text-gray-400">DH</span>
                                     <input type="number" name="price_max" value="{{ request('price_max') }}"
                                         placeholder="{{ $priceRange->max_price ? number_format($priceRange->max_price, 0) : '0' }}"
                                         class="w-full pl-6 pr-2 py-2 text-xs bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-[#1b1b18]/40 transition-colors">
@@ -192,7 +192,7 @@
                                 </p>
                                 <div class="flex justify-between">
                                     <p class="text-sm font-bold text-[#1b1b18] mt-2">
-                                        ${{ number_format($product->price, 2) }}
+                                        {{ number_format($product->price, 2) }} DH
                                     </p>
                                     {{-- <div class="">
                                         <form class="add-to-cart-form flex-1" method="POST"

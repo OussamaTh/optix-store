@@ -29,6 +29,7 @@ class DashboardController extends Controller
         /* dd($recentOrders); */
 
         $topProducts = $this->getTopProducts();
+        /* dd($topProducts); */
 
         $recentCustomers = $this->getRecentCustomers();
 
@@ -57,8 +58,8 @@ class DashboardController extends Controller
                 'name'    => $product->name,
                 'sales'   => (int) $product->total_sales,
                 'revenue' => (float) $product->total_revenue,
-                'image'   => $product->image_path
-                    ? \Illuminate\Support\Facades\Storage::url($product->image_path)
+                'image'   => $product->image_url
+                    ? $product->image_url
                     : null,
             ])
             ->toArray();

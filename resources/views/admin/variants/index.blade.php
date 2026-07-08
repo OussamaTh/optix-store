@@ -80,7 +80,7 @@
                                 {{ $variant->name }}
                             </td>
                             <td class="px-6 py-4 font-semibold text-[#1b1b18]">
-                                +${{ number_format($variant->price, 2) }}
+                                {{ number_format($variant->price, 2) }} DH
                             </td>
                             <td class="px-6 py-4 text-gray-500 max-w-xs truncate">
                                 {{ $variant->description ?? '-' }}

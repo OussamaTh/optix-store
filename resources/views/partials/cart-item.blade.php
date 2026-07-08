@@ -14,7 +14,7 @@
                 </p>
             </div>
             <p class="text-sm font-bold text-[#1b1b18] shrink-0 cart-item-price">
-                ${{ number_format($item->unit_price, 2) }}</p>
+                {{ number_format($item->unit_price, 2) }} DH</p>
         </div>
 
         <div class="flex items-center justify-between mt-3">

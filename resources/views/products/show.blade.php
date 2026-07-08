@@ -67,7 +67,7 @@
 
                 <p id="display-price" class="text-3xl font-bold text-[#1b1b18] mt-4"
                     data-base-price="{{ $product->price }}">
-                    ${{ number_format($product->price, 2) }}
+                    {{ number_format($product->price, 2) }} DH
                 </p>
 
                 <div class="mt-4 space-y-1.5 text-sm">
@@ -161,7 +161,7 @@
 
     <!-- Related products -->
     @if ($relatedProducts->isNotEmpty())
-        <div class="mt-20 max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="my-20 max-w-7xl mx-auto px-6 lg:px-10">
             <h2 class="text-lg font-semibold text-[#1b1b18] mb-6">You might also like</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 @foreach ($relatedProducts as $related)
@@ -173,7 +173,7 @@
                             @endif
                         </div>
                         <h3 class="text-sm font-semibold text-[#1b1b18] truncate">{{ $related->name }}</h3>
-                        <p class="text-sm font-bold text-[#1b1b18] mt-1">${{ number_format($related->price, 2) }}</p>
+                        <p class="text-sm font-bold text-[#1b1b18] mt-1">{{ number_format($related->price, 2) }} DH </p>
                     </a>
                 @endforeach
             </div>
@@ -198,7 +198,7 @@
             const basePrice = parseFloat(displayPrice.dataset.basePrice);
 
             function formatPrice(value) {
-                return '$' + value.toFixed(2);
+                return  value.toFixed(2) + ' DH';
             }
 
             variantButtons.forEach(btn => {

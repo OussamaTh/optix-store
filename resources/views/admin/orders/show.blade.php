@@ -70,14 +70,14 @@ $isCancelled = $order->status === 'cancelled';
                                     ${{ number_format($item->price, 2) }} each</p>
                             </div>
                             <span
-                                class="text-sm font-bold text-[#1b1b18] whitespace-nowrap">${{ number_format($item->quantity * $item->price, 2) }}</span>
+                                class="text-sm font-bold text-[#1b1b18] whitespace-nowrap">{{ number_format($item->quantity * $item->price, 2) }} DH</span>
                         </div>
                     @endforeach
                 </div>
 
                 <div class="flex items-center justify-between pt-4 mt-2 border-t border-[#19140010]">
                     <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Items Total</span>
-                    <span class="text-base font-bold text-[#1b1b18]">${{ number_format($order->total_amount, 2) }}</span>
+                    <span class="text-base font-bold text-[#1b1b18]">{{ number_format($order->total_amount, 2) }} DH</span>
                 </div>
             </div>
 

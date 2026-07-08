@@ -49,16 +49,16 @@
         <div class="space-y-1.5 text-xs">
             <div class="flex justify-between text-gray-500">
                 <span>Subtotal:</span>
-                <span id="cart-subtotal" class="font-medium text-[#1b1b18]">${{ number_format($subtotal, 2) }}</span>
+                <span id="cart-subtotal" class="font-medium text-[#1b1b18]">{{ number_format($subtotal, 2) }} DH</span>
             </div>
             <div class="flex justify-between text-gray-500">
                 <span>Delivery:</span>
                 <span id="cart-delivery"
-                    class="font-medium text-[#1b1b18]">{{ $delivery > 0 ? '$' . number_format($delivery, 2) : 'Free' }}</span>
+                    class="font-medium text-[#1b1b18]">{{ $delivery > 0 ? 'DH' . number_format($delivery, 2) : 'Free' }}</span>
             </div>
             <div class="flex justify-between text-sm font-bold text-[#1b1b18] pt-1">
                 <span>Total:</span>
-                <span id="cart-total">${{ number_format($total, 2) }}</span>
+                <span id="cart-total">{{ number_format($total, 2) }} DH</span>
             </div>
         </div>
 

@@ -155,10 +155,10 @@
                                             {{ $item->variant_name }}</p>
                                     @endif
                                     <p class="text-xs text-gray-400 mt-0.5">Qty {{ $item->quantity }} @
-                                        ${{ number_format($item->price, 2) }}</p>
+                                        {{ number_format($item->price, 2) }} DH</p>
                                 </div>
                             </div>
-                            <span class="text-sm font-bold text-[#1b1b18]">${{ number_format($itemSubtotal, 2) }}</span>
+                            <span class="text-sm font-bold text-[#1b1b18]">{{ number_format($itemSubtotal, 2) }} DH</span>
                         </div>
                     @endforeach
                 </div>
@@ -206,7 +206,7 @@
                     <h2 class="text-sm font-bold text-[#1b1b18] uppercase tracking-wider mb-3">Order Summary</h2>
                     <div class="flex justify-between text-xs text-gray-500 mb-2">
                         <span>Subtotal</span>
-                        <span>${{ number_format($order->items->sum(fn($i) => $i->price * $i->quantity), 2) }}</span>
+                        <span>{{ number_format($order->items->sum(fn($i) => $i->price * $i->quantity), 2) }} DH</span>
                     </div>
                     <div class="flex justify-between text-xs text-gray-500 mb-2">
                         <span>Shipping</span>
@@ -214,7 +214,7 @@
                     </div>
                     <div class="flex justify-between text-sm font-bold text-[#1b1b18] border-t border-gray-200 pt-2 mt-1">
                         <span>Total Paid</span>
-                        <span>${{ number_format($order->total_amount, 2) }}</span>
+                        <span>{{ number_format($order->total_amount, 2) }} DH</span>
                     </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@
                         <th class="text-[11px] uppercase tracking-wider text-gray-400 font-medium px-6 py-4">Orders</th>
                         <th class="text-[11px] uppercase tracking-wider text-gray-400 font-medium px-6 py-4">Total Spent
                         </th>
-                        <th class="text-[11px] uppercase tracking-wider text-gray-400 font-medium px-6 py-4">Status</th>
+                        
                         <th class="text-[11px] uppercase tracking-wider text-gray-400 font-medium px-6 py-4">Joined</th>
                         <th class="px-6 py-4"></th>
                     </tr>
@@ -82,9 +82,7 @@
                             </td>
                             <td class="px-6 py-4 text-xs text-gray-600">{{ $customer['orders'] }}</td>
                             <td class="px-6 py-4 text-xs font-semibold text-[#1b1b18]">
-                                ${{ number_format($customer['total_spent'], 2) }}</td>
-                            <td class="px-6 py-4">@include('admin.partials.status-badge', ['status' => $customer['status']])</td>
-                            <td class="px-6 py-4 text-xs text-gray-400">{{ $customer['joined'] }}</td>
+                                {{ number_format($customer['total_spent'], 2) }} DH</td>
                             <td class="px-6 py-4 text-right">
                                 <a href="{{ route('admin.customers.show', $customer['id']) }}"
                                     class="text-xs font-semibold text-gray-500 hover:text-black">View →</a>

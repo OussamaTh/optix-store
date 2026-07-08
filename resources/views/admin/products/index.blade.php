@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 font-semibold text-[#1b1b18]">${{ number_format($product->price, 2) }}
+                                <td class="px-6 py-4 font-semibold text-[#1b1b18]">{{ number_format($product->price, 2) }} DH
                                 </td>
                                 <td class="px-6 py-4 text-gray-500 text-xs">{{ $product->created_at->format('M d, Y') }}
                                 </td>

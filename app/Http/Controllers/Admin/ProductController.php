@@ -26,6 +26,7 @@ class ProductController extends Controller
 
         return view('admin.products.index', compact('products'));
     }
+    
 
     public function show(Product $productId): View
     {

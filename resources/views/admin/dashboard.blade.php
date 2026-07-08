@@ -78,7 +78,7 @@
 
             </div>
             <p class="text-xs uppercase tracking-wider text-gray-400 font-medium">Total Revenue</p>
-            <p class="mt-1.5 text-2xl font-bold text-[#1b1b18]">${{ number_format($stats['total_revenue'], 2) }}</p>
+            <p class="mt-1.5 text-2xl font-bold text-[#1b1b18]">{{ number_format($stats['total_revenue'], 2) }} DH</p>
         </div>
 
         <div class="bg-white border border-[#19140010] rounded-2xl p-6 hover:shadow-md transition-shadow">
@@ -181,7 +181,7 @@
                                         <span
                                             class="text-[10px] text-gray-400 block uppercase tracking-wider font-medium">Total</span>
                                         <span
-                                            class="text-sm font-bold text-[#1b1b18]">${{ number_format($order->total_amount, 2) }}</span>
+                                            class="text-sm font-bold text-[#1b1b18]">{{ number_format($order->total_amount, 2) }} DH</span>
                                     </div>
                                 </div>
                             </div>
@@ -256,8 +256,8 @@
                     <div class="flex items-center gap-3">
                         <div
                             class="w-10 h-10 rounded-xl bg-gray-50 border border-[#19140010] flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            @if ($product['image'])
-                                <img src="{{ $product['image'] }}" alt="{{ $product['name'] }}"
+                            @if ($product["image"])
+                                <img src="{{ $product["image"] }}" alt="{{ $product['name'] }}"
                                     class="w-full h-full object-cover">
                             @else
                                 <svg class="w-4.5 h-4.5 text-gray-300" fill="none" stroke="currentColor"
@@ -272,7 +272,7 @@
                             <p class="text-[11px] text-gray-400">{{ $product['sales'] }} sold</p>
                         </div>
                         <span
-                            class="text-xs font-bold text-[#1b1b18] whitespace-nowrap">${{ number_format($product['revenue'], 2) }}</span>
+                            class="text-xs font-bold text-[#1b1b18] whitespace-nowrap">{{ number_format($product['revenue'], 2) }} DH</span>
                     </div>
                 @empty
                     <p class="text-xs text-gray-400">No product sales yet.</p>
