@@ -17,7 +17,7 @@ require __DIR__ . '/admin.php';
 
 Route::get('/', function () {
     $products = \App\Models\Product::latest()->take(8)->get();
-    return view('welcome', compact('products'));
+    return view('errors.500', compact('products'));
 })->name('main-page');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');

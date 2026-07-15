@@ -27,11 +27,14 @@ return Application::configure(basePath: dirname(__DIR__))
         // 💡 GLOBAL NULL-PROPERTY SHIELD FOR PRODUCTION
         $exceptions->render(function (\ErrorException $e) {
             if (config('app.env') === 'production' && Str::contains($e->getMessage(), 'Attempt to read property')) {
-                // Log it silently so you know what broke behind the scenes
                 logger()->error('Global Null Shield Intercepted: ' . $e->getMessage());
-
-                // Return an empty response, redirect back, or render a clean fallback
                 return response()->view('errors.safe-fallback', [], 200);
             }
+        });
+
+        // 🛑 DB CONNECTION / QUERY FAILURE → SHOW 404
+        $exceptions->render(function (\Illuminate\Database\QueryException $e) {
+            logger()->error('DB error suppressed as 404: ' . $e->getMessage());
+            abort(404);
         });
     })->create();

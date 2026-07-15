@@ -328,8 +328,8 @@ $state = $states[$code] ?? [
             <p class="sub">{{ $state['message'] }}</p>
 
             <div class="actions">
-                <a href="/" class="pill pill-solid">Back to shop</a>
-                <a href="/contact" class="pill pill-outline">Contact support</a>
+                {{-- <a href="/" class="pill pill-solid">Back to shop</a>
+                <a href="/contact" class="pill pill-outline">Contact support</a> --}}
             </div>
 
         </div>
